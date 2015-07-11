@@ -1,7 +1,9 @@
+# coding: utf-8
+
 # Python 3.4.3
 # tweepy 3.3.0
 
-# coding: utf-8
+import os
 import sys
 import webbrowser
 import tweepy
@@ -17,9 +19,10 @@ root.withdraw()
 default_dir = '.'
 save_directory = ''
 
-f = open('consumer_key.txt')
+f = open(os.path.dirname(os.path.abspath(__file__))+'\consumer_key.txt')
+
 consumer_key = f.readline().rstrip('\n')
-consumer_secret = f.readline().rstrip("\n")
+consumer_secret = f.readline().rstrip('\n')
 keyword = '#image'
 
 class streamListener(StreamListener):   #StreamingAPI
