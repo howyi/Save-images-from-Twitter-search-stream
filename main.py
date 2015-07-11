@@ -17,7 +17,7 @@ root.withdraw()
 default_dir = '.'
 save_directory = ''
 
-f = open('comsumer_key.txt')
+f = open('consumer_key.txt')
 consumer_key = f.readline().rstrip('\n')
 consumer_secret = f.readline().rstrip("\n")
 keyword = '#image'
