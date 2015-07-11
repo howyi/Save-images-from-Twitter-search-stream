@@ -23,11 +23,11 @@ f = open(os.path.dirname(os.path.abspath(__file__))+'\consumer_key.txt')
 
 consumer_key = f.readline().rstrip('\n')
 consumer_secret = f.readline().rstrip('\n')
-keyword = '#image'
+keyword = '#image'  #searchstreamでtrackするワード
 
 class streamListener(StreamListener):   #StreamingAPI
     def on_status(self, status):
-        if not hasattr(status, 'retweeted_status'): #without RT
+        if not hasattr(status, 'retweeted_status'): #RTを除外
             try:
                 print ('   ' + status.author.name + ':'+  status.text)
             except:
